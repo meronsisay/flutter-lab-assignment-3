@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../blocs/album_bloc.dart';
 import '../blocs/album_event.dart';
 import '../blocs/album_state.dart';
-import '../widgets/album_tile.dart';
 
 class AlbumListScreen extends StatelessWidget {
   const AlbumListScreen({super.key});
@@ -97,10 +97,9 @@ class AlbumListScreen extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(
-                          context,
+                        context.push(
                           '/album-detail',
-                          arguments: {'album': album, 'photoUrl': photo.url},
+                          extra: {'album': album, 'photoUrl': photo.url},
                         );
                       },
                     ),

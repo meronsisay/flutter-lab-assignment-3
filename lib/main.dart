@@ -5,7 +5,7 @@ import 'app/router.dart';
 import 'presentation/blocs/album_bloc.dart';
 import 'data/datasource/api_service.dart';
 import 'data/repository/album_repository_impl.dart';
-import './domain/album_repository.dart';
+import 'domain/album_repository.dart';
 
 void main() {
   final apiService = ApiService();
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => AlbumBloc(repository)..add(FetchAlbums()),
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Album App',
-        onGenerateRoute: generateRoute,
+        routerConfig: appRouter,
         debugShowCheckedModeBanner: false,
       ),
     );

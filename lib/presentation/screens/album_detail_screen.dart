@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../data/models/album_model.dart';
 
 class AlbumDetailScreen extends StatelessWidget {
@@ -62,7 +63,7 @@ class AlbumDetailScreen extends StatelessWidget {
             ),
             const Spacer(),
             ElevatedButton.icon(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => context.pop(),
               icon: const Icon(Icons.arrow_back),
               label: const Text('Back to Albums'),
               style: ElevatedButton.styleFrom(
